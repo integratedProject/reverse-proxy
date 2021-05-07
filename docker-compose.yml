@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+ reverseproxy:
+  image: nginx
+  volumes:
+   - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  ports:
+   - "80:80"
+networks:
+    default:
+        external:
+            name: cosmetic_network      
